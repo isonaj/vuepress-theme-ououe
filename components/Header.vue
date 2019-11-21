@@ -21,7 +21,10 @@
             ></nav-link>
           </nav>
         </div>
-        <search-box v-if="$themeConfig.search"></search-box>
+        <div class="nav-link-right">
+          <SocialLinks v-if="$themeConfig.social"></SocialLinks>
+          <search-box v-if="$themeConfig.search"></search-box>
+        </div>
       </div>
     </div>
     <slot></slot>
@@ -31,12 +34,14 @@
 <script>
 import SearchBox from '@SearchBox'
 import NavLink from '@theme/components/NavLink.vue'
+import SocialLinks from '@theme/components/SocialLinks.vue'
 
 export default {
   name: 'Header',
   components: {
     SearchBox,
-    NavLink
+    NavLink,
+    SocialLinks
   },
   computed: {
     links() {
@@ -68,6 +73,7 @@ export default {
       .nav-link
         .link-logo
           height $headerHeight
+          vertical-align middle
           .logo-img
             padding 16.5% 0
             height 50%
@@ -76,7 +82,7 @@ export default {
           .list-item
             display inline-block
             padding 0 .7rem
-            font-size 1.2rem
+            // font-size 1.2rem
             color $whiteColor
             line-height $headerHeight
             &:after
@@ -107,4 +113,7 @@ export default {
       display none
 .cover-header
   height $coverHeight
+
+.nav-link-right
+  display flex
 </style>

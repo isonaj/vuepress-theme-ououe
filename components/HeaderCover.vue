@@ -60,6 +60,7 @@ export default {
     .title-img
       max-width 100%
       max-height ($coverHeight / 5)
+      border-radius 50%
     .title-text
       max-width 100%
       max-height: ($coverHeight / 5)
@@ -70,6 +71,7 @@ export default {
     margin-top .5rem
     font-size 1.2rem
     color $whiteColor
+    text-align center
 @media (max-width $phoneWidth)
   .header-cover
     .cover-title
